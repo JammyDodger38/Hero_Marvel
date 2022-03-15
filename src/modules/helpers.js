@@ -7,6 +7,8 @@ const render = (result) => {
     const createEl = (element) => {
         let div = document.createElement('div')
         let img = document.createElement('img')
+        let wrapImg = document.createElement('div')
+        let wrapP = document.createElement('div')
         let textP = document.createElement('p')
 
         img.src = element.photo
@@ -26,9 +28,13 @@ const render = (result) => {
         
         img.classList.add('hero__image')
         div.classList.add('wrap')
+        wrapImg.classList.add('wrapImg')
+        wrapP.classList.add('wrapP')
 
-        div.append(img)
-        div.append(textP)
+        wrapImg.append(img)
+        wrapP.append(textP)
+        div.append(wrapImg)
+        div.append(wrapP)
 
         wrap.append(div)
     }
